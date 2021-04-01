@@ -14,7 +14,7 @@ public class Intake extends Mechanism {
     private ServoHandler leftServo = new ServoHandler("left_servo");
     private ServoHandler rightServo = new ServoHandler("right_servo");
 
-    private DCMotorHandler intakeMotor = new DCMotorHandler("intake_motor", false);
+    private DCMotorHandler intakeMotor = new DCMotorHandler("intake_motor", true, false);
 
     @Override
     public void init(HardwareMap hwmap) {

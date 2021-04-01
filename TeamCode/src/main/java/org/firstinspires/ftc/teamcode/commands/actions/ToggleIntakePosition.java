@@ -2,11 +2,11 @@ package org.firstinspires.ftc.teamcode.commands.actions;
 
 import org.firstinspires.ftc.teamcode.commands.basecommands.Command;
 import org.firstinspires.ftc.teamcode.mechanisms.mechanismhandlers.MechanismEngine;
-import org.firstinspires.ftc.teamcode.mechanisms.ExampleServoMechanism;
+import org.firstinspires.ftc.teamcode.mechanisms.Intake;
 
-public class ExampleToggleServoPosition extends Command {
+public class ToggleIntakePosition extends Command {
 
-    private ExampleServoMechanism localIntake = MechanismEngine.getInstance().getMechanism(ExampleServoMechanism.class);
+    private Intake localIntake = MechanismEngine.getInstance().getMechanism(Intake.class);
 
     public void initialize() {
 

@@ -9,6 +9,8 @@ import static org.firstinspires.ftc.teamcode.framework.Constants.*;
 
 public class DriveTrain extends Mechanism {
 
+    private boolean flipped = false;
+
     //Yes, I know that all 4 motors are flipped. No, that's not how this should work. Yes, that's how it does work. I'm not a lawyer, I'm a programmer.
     private DCMotorHandler frontLeft = new DCMotorHandler("drivetrain_front_left", true, true);
     private DCMotorHandler frontRight = new DCMotorHandler("drivetrain_front_right", false, true);
@@ -20,6 +22,14 @@ public class DriveTrain extends Mechanism {
         frontRight.init(hwmap);
         backLeft.init(hwmap);
         backRight.init(hwmap);
+    }
+
+    public void flip() {
+        flipped = !flipped;
+    }
+
+    public boolean isFlipped() {
+        return flipped;
     }
 
     //I'm just gonna assume we know how to feed the motors proper values at this point, I'm not clipping their speeds anymore

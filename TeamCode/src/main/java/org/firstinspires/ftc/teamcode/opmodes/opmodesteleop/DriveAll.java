@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.opmodes.opmodesteleop;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.commands.actions.ExtendIntake;
+import org.firstinspires.ftc.teamcode.commands.actions.FlipDriveTrain;
 import org.firstinspires.ftc.teamcode.commands.actions.RetractIntake;
 import org.firstinspires.ftc.teamcode.commands.looped.Drive;
 import org.firstinspires.ftc.teamcode.commands.looped.RunIntake;
@@ -21,6 +22,7 @@ public class DriveAll extends TeleOpModeWrapper {
         scheduler.add(new RunIntake(DriverRightTrigger));
         scheduler.add(new Drive(DriverLeftYAxis, DriverLeftXAxis, DriverRightXAxis));
 
+        DriverLeftBumper.whenPressed(new FlipDriveTrain());
         DriverAButton.whileHeld(new ExtendIntake());
         DriverBButton.whileHeld(new RetractIntake());
     }

@@ -25,7 +25,11 @@ public class Drive extends Command {
     }
 
     public void execute() {
-        localDriveTrain.vectorDrive(forwardAxis.get(), strafeAxis.get(), rotateAxis.get());
+        if (!localDriveTrain.isFlipped()) {
+            localDriveTrain.vectorDrive(forwardAxis.get(), strafeAxis.get(), rotateAxis.get());
+        } else {
+            localDriveTrain.vectorDrive(-forwardAxis.get(), -strafeAxis.get(), rotateAxis.get());
+        }
     }
 
     public boolean isFinished() {

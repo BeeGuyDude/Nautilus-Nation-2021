@@ -17,4 +17,10 @@ public class Constants {
 
     //DriveTrain
     public static final double DRIVETRAIN_MOTOR_POWER_LIMIT = 1;
+
+    //Shooter
+    public static final double MAX_SHOOTER_POWER = 1;
+
+    //Storage
+    public static final double STORAGE_FEED_SPEED = 0.8;
 }

@@ -2,17 +2,22 @@ package org.firstinspires.ftc.teamcode.opmodes.opmodesauto;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 
 import org.firstinspires.ftc.teamcode.commands.*;
+import org.firstinspires.ftc.teamcode.framework.util.TelemetryHandler;
 import org.firstinspires.ftc.teamcode.framework.util.Timekeeper;
 import org.firstinspires.ftc.teamcode.mechanisms.mechanismhandlers.MechanismEngine;
 
 abstract class AutoOpModeWrapper extends OpMode {
 
     CommandScheduler scheduler = new CommandScheduler();
-    private Timekeeper timekeeper = new Timekeeper();
+    Timekeeper timekeeper = new Timekeeper();
 
     @Override
     public void init() {
+        TelemetryHandler.getInstance().setTelemetry(telemetry);
+        MechanismEngine.getInstance().refreshInstance();
+
         autoInit();
+
         MechanismEngine.getInstance().setHardwareMap(hardwareMap);
         MechanismEngine.getInstance().initializeMechanisms();
 

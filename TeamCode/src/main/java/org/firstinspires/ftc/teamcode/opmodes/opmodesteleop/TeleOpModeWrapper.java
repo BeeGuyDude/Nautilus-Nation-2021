@@ -16,48 +16,48 @@ abstract class TeleOpModeWrapper extends OpMode {
     private Timekeeper timekeeper = new Timekeeper();
 
     //Driver
-    public Button DriverAButton;
-    public Button DriverBButton;
-    public Button DriverXButton;
-    public Button DriverYButton;
-    public Button DriverLeftBumper;
-    public Button DriverRightBumper;
-    public Button DriverDPadUp;
-    public Button DriverDPadRight;
-    public Button DriverDPdDown;
-    public Button DriverDPadLeft;
-    public Button DriverBackButton;
-    public Button DriverStartButton;
-    public Button DriverCenterButton;
+    public Button DriverAButton = null;
+    public Button DriverBButton = null;
+    public Button DriverXButton = null;
+    public Button DriverYButton = null;
+    public Button DriverLeftBumper = null;
+    public Button DriverRightBumper = null;
+    public Button DriverDPadUp = null;
+    public Button DriverDPadRight = null;
+    public Button DriverDPdDown = null;
+    public Button DriverDPadLeft = null;
+    public Button DriverBackButton = null;
+    public Button DriverStartButton = null;
+    public Button DriverCenterButton = null;
 
-    public Axis DriverLeftXAxis;
-    public Axis DriverLeftYAxis;
-    public Axis DriverRightXAxis;
-    public Axis DriverRightYAxis;
-    public Axis DriverLeftTrigger;
-    public Axis DriverRightTrigger;
+    public Axis DriverLeftXAxis = null;
+    public Axis DriverLeftYAxis = null;
+    public Axis DriverRightXAxis = null;
+    public Axis DriverRightYAxis = null;
+    public Axis DriverLeftTrigger = null;
+    public Axis DriverRightTrigger = null;
 
     //Operator
-    public Button OperatorAButton;
-    public Button OperatorBButton;
-    public Button OperatorXButton;
-    public Button OperatorYButton;
-    public Button OperatorLeftBumper;
-    public Button OperatorRightBumper;
-    public Button OperatorDPadUp;
-    public Button OperatorDPadRight;
-    public Button OperatorDPdDown;
-    public Button OperatorDPadLeft;
-    public Button OperatorBackButton;
-    public Button OperatorStartButton;
-    public Button OperatorCenterButton;
+    public Button OperatorAButton = null;
+    public Button OperatorBButton = null;
+    public Button OperatorXButton = null;
+    public Button OperatorYButton = null;
+    public Button OperatorLeftBumper = null;
+    public Button OperatorRightBumper = null;
+    public Button OperatorDPadUp = null;
+    public Button OperatorDPadRight = null;
+    public Button OperatorDPdDown = null;
+    public Button OperatorDPadLeft = null;
+    public Button OperatorBackButton = null;
+    public Button OperatorStartButton = null;
+    public Button OperatorCenterButton = null;
 
-    public Axis OperatorLeftXAxis;
-    public Axis OperatorLeftYAxis;
-    public Axis OperatorRightXAxis;
-    public Axis OperatorRightYAxis;
-    public Axis OperatorLeftTrigger;
-    public Axis OperatorRightTrigger;
+    public Axis OperatorLeftXAxis = null;
+    public Axis OperatorLeftYAxis = null;
+    public Axis OperatorRightXAxis = null;
+    public Axis OperatorRightYAxis = null;
+    public Axis OperatorLeftTrigger = null;
+    public Axis OperatorRightTrigger = null;
 
     @Override
     public void init() {
@@ -110,8 +110,10 @@ abstract class TeleOpModeWrapper extends OpMode {
         gamepad2.setJoystickDeadzone(CONTROLLER_2_DEADZONE);
 
         TelemetryHandler.getInstance().setTelemetry(telemetry);
+        MechanismEngine.getInstance().refreshInstance();
 
         teleOpInit();
+
         MechanismEngine.getInstance().setHardwareMap(hardwareMap);
         MechanismEngine.getInstance().initializeMechanisms();
 
@@ -135,6 +137,7 @@ abstract class TeleOpModeWrapper extends OpMode {
         telemetry.addData("Cycle Time", timekeeper.getCycleTime() + "ms");
         telemetry.addData("Average Cycle Time", timekeeper.getAverageCycleTime() + "ms");
         timekeeper.update(getRuntime());
+
         scheduler.run();
     }
     public abstract void teleOpLoop();

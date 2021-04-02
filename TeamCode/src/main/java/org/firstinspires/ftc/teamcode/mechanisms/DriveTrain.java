@@ -11,11 +11,10 @@ public class DriveTrain extends Mechanism {
 
     private boolean flipped = false;
 
-    //Yes, I know that all 4 motors are flipped. No, that's not how this should work. Yes, that's how it does work. I'm not a lawyer, I'm a programmer.
-    private DCMotorHandler frontLeft = new DCMotorHandler("drivetrain_front_left", true, true);
-    private DCMotorHandler frontRight = new DCMotorHandler("drivetrain_front_right", false, true);
-    private DCMotorHandler backLeft = new DCMotorHandler("drivetrain_back_left", true, true);
-    private DCMotorHandler backRight = new DCMotorHandler("drivetrain_back_right", false, true);
+    private static DCMotorHandler frontLeft = new DCMotorHandler("drivetrain_front_left", true, true);
+    private static DCMotorHandler frontRight = new DCMotorHandler("drivetrain_front_right", false, true);
+    private static DCMotorHandler backLeft = new DCMotorHandler("drivetrain_back_left", true, true);
+    private static DCMotorHandler backRight = new DCMotorHandler("drivetrain_back_right", false, true);
 
     public void init(HardwareMap hwmap) {
         frontLeft.init(hwmap);

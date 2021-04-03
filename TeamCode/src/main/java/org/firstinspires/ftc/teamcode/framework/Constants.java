@@ -22,5 +22,5 @@ public class Constants {
     public static final double MAX_SHOOTER_POWER = 1;
 
     //Storage
-    public static final double STORAGE_FEED_SPEED = 0.8;
+    public static final double STORAGE_FEED_SPEED = 1;
 }

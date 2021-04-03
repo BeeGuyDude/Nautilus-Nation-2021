@@ -63,6 +63,12 @@ public class CommandScheduler {
         commandPriorityMap.put(command, CommandPriority.LOW);
     }
 
+    public void debugAddToExecutionList(Command command) {
+        commandExecutionList.add(command);
+        commandPriorityMap.put(command, CommandPriority.LOW);
+        commandInitializedMap.put(command, false);
+    }
+
     public void requestCommandExecution(Command command) {
         if (!requestedAdditionList.contains(command)) {
             ArrayList<Command> requestedListRemovalList = new ArrayList<Command>();

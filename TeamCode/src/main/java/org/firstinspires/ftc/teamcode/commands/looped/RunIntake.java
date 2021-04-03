@@ -11,6 +11,8 @@ public class RunIntake extends Command {
     private Axis inputAxis;
 
     public RunIntake(Axis inputAxis) {
+        Requires(localIntake);
+
         this.inputAxis = inputAxis;
     }
 

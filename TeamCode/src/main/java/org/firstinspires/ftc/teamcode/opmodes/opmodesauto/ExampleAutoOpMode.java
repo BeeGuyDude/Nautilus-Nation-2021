@@ -18,7 +18,7 @@ public class ExampleAutoOpMode extends AutoOpModeWrapper {      //Note that you 
     //Commands to run repeatedly until finished when you press the play button go here; for auto, I'd recommend scheduler.add()-ing a single CommandGroup for this, and writing the auto in there.
     @Override
     public void autoLoop() {
-        scheduler.debugAddToExecutionList(new TestJankAuto(timekeeper));
+        scheduler.add(new TestJankAuto(timekeeper));
     }
 
 }

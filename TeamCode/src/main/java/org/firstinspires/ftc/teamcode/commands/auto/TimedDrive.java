@@ -29,6 +29,7 @@ public class TimedDrive extends Command {
 
     public void execute() {
         localDriveTrain.vectorDrive(speed, 0, 0);
+        TelemetryHandler.getInstance().getTelemetry().addData("Test", TelemetryHandler.class);
     }
 
     public boolean isFinished() {
